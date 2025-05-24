@@ -1,0 +1,171 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+#space {
+  background-image: url("../assets/png/Background/backgroundStarWars.png");
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+#ship {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+}
+
+.enemy-ship {
+  position: absolute;
+}
+
+.projectile {
+  width: 10px;
+  height: 20px;
+  z-index: 5;
+}
+
+.obstacle {
+  width: 50px;
+  height: 50px;
+  z-index: 4;
+}
+
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  text-align: center;
+  opacity: 0;
+  z-index: 1000;
+  border: 2px solid #faff00;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+#game-over.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#game-over h1 {
+  font-family: 'Orbitron', 'Arial', sans-serif;
+  color: #faff00;
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #faff00, 0 0 20px #faff00;
+}
+
+#game-over button {
+  font-size: 20px;
+  font-family: 'Orbitron', 'Arial', sans-serif;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: black;
+  color: #faff00;
+  border: 2px solid #faff00;
+  text-shadow: 0 0 10px #faff00;
+  transition: background 0.3s;
+}
+
+#game-over button:hover {
+  background: #222;
+}
+
+
+#hud {
+  font-family: 'Star Jedi', sans-serif;
+  color: blue;
+  text-shadow: 0 0 5px #ff0;
+}
+
+#pause-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  font-size: 64px;
+  font-family: 'Orbitron', 'Arial', sans-serif;
+  color: #faff00;
+  opacity: 0;
+  text-shadow: 0 0 10px #faff00, 0 0 20px #faff00;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+#pause-label.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#start-screen, #char-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: yellow;
+  font-family: 'Orbitron', sans-serif;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#start-screen h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+#start-screen button {
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 2px solid yellow;
+  background: black;
+  color: yellow;
+}
+
+.characters {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.char-option {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.char-option:hover {
+  transform: scale(1.1);
+}
+
+.char-option img {
+  width: 120px;
+  height: 120px;
+  border: 2px solid yellow;
+  border-radius: 10px;
+}
+
+.small-tip {
+  margin-top: 30px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+
